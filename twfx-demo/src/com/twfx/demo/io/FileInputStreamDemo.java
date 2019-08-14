@@ -31,7 +31,8 @@ public class FileInputStreamDemo {
 		FileInputStream fis = null;
 		try {
 			fis = new FileInputStream(filePath);
-//			int fileLength = fis.available(); // 获取文件内容长度
+//			int fileLength = fis.available(); // 获取文件内容长度，当文件不大的时可以将文件长度作为byte数组的长度，一次性将文件内容读取出来
+//			byte[] bs = new byte[fileLength];
 			byte[] bs = new byte[1024];
 			int count = 0;
 			while ((count = fis.read(bs)) != -1) {
