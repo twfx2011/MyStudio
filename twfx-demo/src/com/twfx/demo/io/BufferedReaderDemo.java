@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 /**
- * 类名：ReadFile <br />
+ * 类名：读取文件内容，以字符流方式读取 <br />
  *
  * 功能：BufferedReader读取文件内容示例
  *

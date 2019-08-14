@@ -12,7 +12,7 @@ import java.io.IOException;
 /**
  * 类名：FileInputStreamDemo <br />
  *
- * 功能：
+ * 功能：读取文件内容，以字节方式读取
  *
  * @author twfx <br />
  *         创建时间：2019年8月14日 上午10:29:49 <br />
@@ -31,8 +31,8 @@ public class FileInputStreamDemo {
 		FileInputStream fis = null;
 		try {
 			fis = new FileInputStream(filePath);
-			int dataLength = fis.available();
-			byte[] bs = new byte[dataLength];
+//			int fileLength = fis.available(); // 获取文件内容长度
+			byte[] bs = new byte[1024];
 			int count = 0;
 			while ((count = fis.read(bs)) != -1) {
 				sb.append(new String(bs, 0, count));
