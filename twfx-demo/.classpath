@@ -2,5 +2,11 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="_lib/dbutils/commons-dbutils-1.7.jar"/>
+	<classpathentry kind="lib" path="_lib/dbutils/commons-dbcp-1.4.jar"/>
+	<classpathentry kind="lib" path="_lib/dbutils/commons-pool-1.6.jar"/>
+	<classpathentry kind="lib" path="_lib/junit/junit-4.10.jar"/>
+	<classpathentry kind="lib" path="_lib/dbutils/mysql-connector-java-5.1.5.jar"/>
+	<classpathentry kind="lib" path="_lib/dbutils/c3p0-0.9.1.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
