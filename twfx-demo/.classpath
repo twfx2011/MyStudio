@@ -8,5 +8,7 @@
 	<classpathentry kind="lib" path="_lib/junit/junit-4.10.jar"/>
 	<classpathentry kind="lib" path="_lib/dbutils/mysql-connector-java-5.1.5.jar"/>
 	<classpathentry kind="lib" path="_lib/dbutils/c3p0-0.9.1.1.jar"/>
+	<classpathentry kind="lib" path="_lib/sap/sapjco3.jar"/>
+	<classpathentry kind="lib" path="_lib/sap/twfx-sap-0.0.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
