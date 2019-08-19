@@ -11,12 +11,15 @@ import java.io.FileOutputStream;
 import java.util.Properties;
 import java.util.ResourceBundle;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.sap.conn.jco.JCoDestination;
 import com.sap.conn.jco.JCoDestinationManager;
 import com.sap.conn.jco.JCoException;
 import com.sap.conn.jco.JCoFunction;
 import com.sap.conn.jco.ext.DestinationDataProvider;
-import com.twfx.sap.exception.SAPException;
+import com.twfx.sap.exception.SAPRuntimeException;
 
 /**
  * 类名：SAPConn <br />
@@ -29,6 +32,9 @@ import com.twfx.sap.exception.SAPException;
  */
 public class SAPConnManager {
 
+	/** 日志记录器 */
+	private static final Logger logger = LoggerFactory.getLogger(SAPConnManager.class);
+	
 	/** ABAP管道名称 */
 	private static final String ABAP_AS_POOLED = "ABAP_AS_WITH_POOL";
 
@@ -79,7 +85,7 @@ public class SAPConnManager {
 			properties.store(fos, resource.getString(KEY_CLIENT_COMMENTS));
 			fos.close();
 		}catch (Exception e) {
-           throw new SAPException("创建【" + cfg.getName() + "】SAP接口配置文件出现错误：", e);  
+			logger.error("创建【{}】SAP接口配置文件出现异常：", cfg.getName(), e);
 		}
 	}
 
@@ -89,13 +95,12 @@ public class SAPConnManager {
 	 * @return SAP连接对象
 	 */
 	public static JCoDestination connect() {
-		JCoDestination destination = null;
 		try {
-			destination = JCoDestinationManager.getDestination(ABAP_AS_POOLED);
+			JCoDestination destination = JCoDestinationManager.getDestination(ABAP_AS_POOLED);
+			return destination;
 		}catch (JCoException e) {
-			throw new SAPException("获取SAP连接出现错误：", e);  
+			throw new SAPRuntimeException("获取SAP连接出现异常：", e);
 		}
-		return destination;
 	}
 	
 	/**
@@ -108,7 +113,7 @@ public class SAPConnManager {
 		try {
 			return destination.getRepository().getFunction(funcName);
 		}catch (JCoException e) {
-			throw new SAPException("获取SAP【" + funcName + "】函数时出现错误：", e);
+			throw new SAPRuntimeException("获取SAP【" + funcName + "】函数时出现异常：", e);
 		}
 	}
 }

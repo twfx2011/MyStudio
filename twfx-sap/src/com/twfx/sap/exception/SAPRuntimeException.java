@@ -15,21 +15,21 @@ package com.twfx.sap.exception;
  *         创建时间：2019年8月16日 下午4:43:09 <br />
  * @version 2019年8月16日
  */
-public class SAPException extends RuntimeException {
+public class SAPRuntimeException extends RuntimeException {
 
 	private static final long serialVersionUID = 6582089328270486438L;
 
 	/**
 	 * 构造方法
 	 */
-	public SAPException(String message) {
+	public SAPRuntimeException(String message) {
 		super(message);
 	}
 
 	/**
 	 * 构造方法
 	 */
-	public SAPException(String message, Throwable cause) {
+	public SAPRuntimeException(String message, Throwable cause) {
 		super(message, cause);
 	}
 }

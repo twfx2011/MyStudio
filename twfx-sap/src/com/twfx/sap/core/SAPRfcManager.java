@@ -9,7 +9,7 @@ package com.twfx.sap.core;
 import com.sap.conn.jco.JCoDestination;
 import com.sap.conn.jco.JCoException;
 import com.sap.conn.jco.JCoFunction;
-import com.twfx.sap.exception.SAPException;
+import com.twfx.sap.exception.SAPRuntimeException;
 
 /**
  * 类名：SAPManagerFactory <br />
@@ -50,7 +50,7 @@ public class SAPRfcManager {
 
 			return t;
 		}catch (Exception e) {
-			throw new SAPException("SAP函数执行时出现错误:", e);
+			throw new SAPRuntimeException("SAP函数执行时出现异常:", e);
 		}
 	}
 	
@@ -70,7 +70,7 @@ public class SAPRfcManager {
 		try {
 			function.execute(destination);
 		}catch (JCoException e) {
-			throw new SAPException("SAP函数执行时出现错误:", e);
+			throw new SAPRuntimeException("SAP函数执行时出现异常:", e);
 		}
 	}
 }
