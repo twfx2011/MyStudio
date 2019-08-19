@@ -10,5 +10,8 @@
 	<classpathentry kind="lib" path="_lib/dbutils/c3p0-0.9.1.1.jar"/>
 	<classpathentry kind="lib" path="_lib/aliyun/aliyun-java-sdk-core-3.7.1.jar" sourcepath="D:/program/repos/com/aliyun/aliyun-java-sdk-core/3.7.1/aliyun-java-sdk-core-3.7.1-sources.jar"/>
 	<classpathentry kind="lib" path="_lib/aliyun/aliyun-java-sdk-dysmsapi-1.1.0.jar" sourcepath="D:/program/repos/com/aliyun/aliyun-java-sdk-dysmsapi/1.1.0/aliyun-java-sdk-dysmsapi-1.1.0-sources.jar"/>
+	<classpathentry kind="lib" path="_lib/logs/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="_lib/logs/slf4j-api-1.7.24.jar"/>
+	<classpathentry kind="lib" path="_lib/logs/slf4j-log4j12-1.7.24.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
