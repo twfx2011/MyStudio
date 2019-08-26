@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>采购入库单列表</title>
+		<script src="../js/Lodop6/LodopFuncs6.222.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/Lodop6/template_inStockBill.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" charset="utf-8">
+		
+			// 预览
+			function preview() {
+				var bill = { id: '00001866', inStockDate:'2019-08-21', wareHouse: '原料库', supplyCompany: '其他', remark: '哈哈哈' };
+				var details = [];
+				details.push({ goodsId: '000001', goodsName: '上海青', model: '1*500g', num: 10, unitPrice: 4.76, money: 47.6 });
+				details.push({ goodsId: '000002', goodsName: '西红柿', model: '1*500g', num: 10, unitPrice: 2.36, money: 23.6 });
+				bill.details = details;
+				var LODOP=getLodop();
+				printInStockBill(bill, LODOP);
+				LODOP.PREVIEW(); // 预览打印
+			}
+			
+			// 打印
+			function print() {
+				var bill = { id: '00001866', inStockDate:'2019-08-21', wareHouse: '原料库', supplyCompany: '其他', remark: '哈哈哈' };
+				var details = [];
+				details.push({ goodsId: '000001', goodsName: '上海青', model: '1*500g', num: 10, unitPrice: 4.76, money: 47.6 });
+				details.push({ goodsId: '000002', goodsName: '西红柿', model: '1*500g', num: 10, unitPrice: 2.36, money: 23.6 });
+				bill.details = details;
+				var LODOP=getLodop();
+				printInStockBill(bill, LODOP);
+				LODOP.PRINT(); // 直接打印
+			}
+		
+		</script>
+	</head>
+
+	<body>
+		
+		<div style="text-align: center">
+			<p>LODOP Web端打印预览</p>
+			<input type="button" id="preview" value="预览" onclick="javascript:preview()"/>
+			<input type="button" id="preview" value="打印" onclick="javascript:print()"/>
+		</div>
+
+		
+		
+	</body>
+</html>
+	
