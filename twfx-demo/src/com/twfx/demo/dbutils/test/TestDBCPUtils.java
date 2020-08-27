@@ -7,6 +7,7 @@
 package com.twfx.demo.dbutils.test;
 
 import java.sql.SQLException;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -60,6 +61,30 @@ public class TestDBCPUtils {
 		}
 	}
 
+	/**
+	 * 功能：批量添加用户<br/>
+	 *
+	 * @author twfx
+	 * @version 2019年8月15日 下午5:08:38 <br/>
+	 */
+	@Test
+	public void testBatchAddUser() {
+		try {
+			// 1.创建核心类QueryRunner
+			QueryRunner qr = new QueryRunner(DBCPUtils.getDataSource());
+			// 2.编写SQL语句
+			String sql = "insert into user(userCode, userName, userPwd, state) values(?,?,?,?)";
+			// 3.为占位符设置值
+			Object[][] params = {{ "admin1", "管理员", "123456", 1 }, { "admin2", "管理员", "123456", 1 }};
+			// 4.执行添加操作
+			int[] rows = qr.batch(sql, params);
+			System.out.println(Arrays.toString(rows));
+		}catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
     /**
      * 功能：根据id修改用户密码<br/>
      *
